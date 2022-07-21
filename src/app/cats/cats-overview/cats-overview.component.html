@@ -1,6 +1,13 @@
 <section>
-    <div class="listElement" *ngFor="let cat of cats">
-        <img src="./assets/cats-pic/{{cat.picUrl}}" alt="" (click)="onClick(cat)">
+  <div class="buttons">
+      <button class="sort-by-name" (click)="sortByName()">Sort by cat name (alphabetically)</button>
+      <button class="sort-by-breed" (click)="sortByBreed()">Sort by cat breed (alphabetically)</button>
+  </div>
+  <div class="listElement" *ngFor="let cat of cats" [style.border]="reserved(cat) ? '2px solid rgb(255,0,0)' : '2px solid rgb(124,252,0)'">
+      <img src="./assets/cats-pic/{{cat.picUrl}}" alt="" (click)="onClick(cat)">
+      <div class="tooltip">
+        <span>{{cat.funFact}}</span>
+      </div>
         <span>{{cat.name}}</span>
-    </div>
+  </div>
 </section>

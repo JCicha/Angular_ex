@@ -1,10 +1,13 @@
 <section>
     <div class="side-by-side">
+        <button (click)="getPrevious()">Previous</button>
         <img src="./assets/cats-pic/{{cat.picUrl}}" alt="">
-        <div class="cols">
+        <button (click)="getNext()">Next</button>
+      <div class="cols">
             <span class="cats-name">{{cat.name}}</span>
             <span>{{cat.ageMonths}} miesięcy</span>
             <span>{{cat.breed}}</span>
+            <span>zaszczepiony: {{cat.vaccination}}</span>
         </div>
     </div>
 
